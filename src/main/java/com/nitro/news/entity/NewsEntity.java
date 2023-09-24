@@ -1,23 +1,29 @@
 package com.nitro.news.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table (name="news")
+@Table (name="new")
 public class NewsEntity extends BaseEntity {
 	
-	@Column (name = "title")
+	@Column(name = "title")
 	private String title;
 	
-	@Column
+	@Column(name = "thumnail")
 	private String thumnail;
 	
-	@Column
-	private String shortdescription;
+	@Column(name = "shortdescription")
+	private String shortDescription;
 	
-	@Column
+	@Column(name = "content")
 	private String content;
+	
+	@ManyToOne
+	@JoinColumn(name = "category_id")
+	private CategoryEntity category;
 
 	public String getTitle() {
 		return title;
@@ -35,12 +41,12 @@ public class NewsEntity extends BaseEntity {
 		this.thumnail = thumnail;
 	}
 
-	public String getShortdescription() {
-		return shortdescription;
+	public String getShortDescription() {
+		return shortDescription;
 	}
 
-	public void setShortdescription(String shortdescription) {
-		this.shortdescription = shortdescription;
+	public void setShortDescription(String shortDescription) {
+		this.shortDescription = shortDescription;
 	}
 
 	public String getContent() {
@@ -49,6 +55,14 @@ public class NewsEntity extends BaseEntity {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public CategoryEntity getCategory() {
+		return category;
+	}
+
+	public void setCategory(CategoryEntity category) {
+		this.category = category;
 	}
 	
 	

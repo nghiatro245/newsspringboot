@@ -1,31 +1,44 @@
 package com.nitro.news.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table (name="user")
 public class UserEntity extends BaseEntity {
 	
-	@Column
-	private String username;
+	@Column(name = "username")
+	private String userName;
 	
-	@Column
+	@Column(name = "password")
 	private String password;
 	
-	@Column
-	private String fullname;
+	@Column(name = "fullname")
+	private String fullName;
 	
-	@Column
+	@Column(name = "status")
 	private Integer status;
+	
+	@ManyToMany
+	@JoinTable(name = "user_role",
+				joinColumns = @JoinColumn(name = "user_id"),
+				inverseJoinColumns = @JoinColumn(name = "role_id"))
+	
+	private List<RoleEntity> roles = new ArrayList<>();
 
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {
@@ -36,12 +49,12 @@ public class UserEntity extends BaseEntity {
 		this.password = password;
 	}
 
-	public String getFullname() {
-		return fullname;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 
 	public Integer getStatus() {
@@ -50,6 +63,14 @@ public class UserEntity extends BaseEntity {
 
 	public void setStatus(Integer status) {
 		this.status = status;
+	}
+
+	public List<RoleEntity> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<RoleEntity> roles) {
+		this.roles = roles;
 	}
 	
 	
