@@ -1,6 +1,6 @@
 package com.nitro.news.dto;
 
-public class NewsDTO {
+public class NewsDTO extends AbstractDTO<NewsDTO> {
 	private String title;
 	private String content;
 	private String shortDescription;

@@ -1,5 +1,7 @@
 package com.nitro.news.converter;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Component;
 
 import com.nitro.news.dto.NewsDTO;
@@ -19,10 +21,22 @@ public class NewsConverter {
 	
 	public NewsDTO toDTO(NewsEntity entity) {
 		NewsDTO dto = new NewsDTO();
+		if(entity.getID()!=null) {
+			dto.setId(entity.getID());
+		}
 		dto.setTitle(entity.getTitle());
 		dto.setContent(entity.getContent());
 		dto.setShortDescription(entity.getShortDescription());
 		dto.setThumnail(entity.getThumnail());
 		return dto;
 	}
+	
+	public NewsEntity toEntity(NewsDTO dto, Optional<NewsEntity> entity) {
+		entity.get().setTitle(dto.getTitle());
+		entity.get().setContent(dto.getContent());
+		entity.get().setShortDescription(dto.getShortDescription());
+		entity.get().setThumnail(dto.getThumnail());
+		return entity.get();
+	}
+	
 }
