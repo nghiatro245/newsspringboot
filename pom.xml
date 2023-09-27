@@ -42,7 +42,13 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.example</groupId>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>
+				com.example</groupId>
 			<artifactId>demo-spring</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>

@@ -21,13 +21,17 @@ public class NewsConverter {
 	
 	public NewsDTO toDTO(NewsEntity entity) {
 		NewsDTO dto = new NewsDTO();
-		if(entity.getID()!=null) {
-			dto.setId(entity.getID());
+		if(entity.getId()!=null) {
+			dto.setId(entity.getId());
 		}
 		dto.setTitle(entity.getTitle());
 		dto.setContent(entity.getContent());
 		dto.setShortDescription(entity.getShortDescription());
 		dto.setThumnail(entity.getThumnail());
+		dto.setCreatedDate(entity.getCreatedDate());
+		dto.setCreatedBy(entity.getCreatedBy());
+		dto.setModifiedBy(entity.getModifiedBy());
+		dto.setModifiedDate(entity.getModifiedDate());
 		return dto;
 	}
 	

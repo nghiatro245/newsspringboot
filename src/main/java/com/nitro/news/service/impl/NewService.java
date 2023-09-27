@@ -41,12 +41,12 @@ public class NewService implements INewService {
 	}
 
 //	@Override
-//	public NewsDTO update(NewsDTO newsDTO) {
-//		NewsEntity oldNewsEntity = newsRepository.findById(newsDTO.getId());
-//		NewsEntity newsEntity = newsConverter.toEntity(newsDTO, oldNewsEntity);
-//		CategoryEntity categoryEntity = categoryRepository.findOneByCode(newsDTO.getCategoryCode());
-//		newsEntity.setCategory(categoryEntity);
-//		newsEntity = newsRepository.save(newsEntity);
-//		return newsConverter.toDTO(newsEntity);
-//	}
+////	public NewsDTO update(NewsDTO newsDTO) {
+////		NewsEntity oldNewsEntity = newsRepository.findById(newsDTO.getId());
+////		NewsEntity newsEntity = newsConverter.toEntity(newsDTO, oldNewsEntity);
+////		CategoryEntity categoryEntity = categoryRepository.findOneByCode(newsDTO.getCategoryCode());
+////		newsEntity.setCategory(categoryEntity);
+////		newsEntity = newsRepository.save(newsEntity);
+////		return newsConverter.toDTO(newsEntity);
+////	}
 }
