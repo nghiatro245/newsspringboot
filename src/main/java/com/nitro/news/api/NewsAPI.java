@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.nitro.news.dto.NewsDTO;
 import com.nitro.news.service.INewService;
+import com.nitro.news.service.impl.NewService;
 
 
 //@Controller
@@ -41,6 +42,6 @@ public class NewsAPI {
 	
 	@DeleteMapping(value = "/new")
 	public void deleteNew(@RequestBody long[] ids) {
-		
+		iNewService.delete(ids);
 	}
 }

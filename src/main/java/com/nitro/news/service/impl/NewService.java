@@ -40,6 +40,13 @@ public class NewService implements INewService {
 		return newsConverter.toDTO(newsEntity);
 	}
 
+	@Override
+	public void delete(long[] ids) {
+		for(long item:ids) {
+			newsRepository.deleteById(item);
+		}
+	}
+
 //	@Override
 ////	public NewsDTO update(NewsDTO newsDTO) {
 ////		NewsEntity oldNewsEntity = newsRepository.findById(newsDTO.getId());
@@ -49,4 +56,6 @@ public class NewService implements INewService {
 ////		newsEntity = newsRepository.save(newsEntity);
 ////		return newsConverter.toDTO(newsEntity);
 ////	}
+	
+	
 }

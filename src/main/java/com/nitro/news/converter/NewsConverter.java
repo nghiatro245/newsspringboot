@@ -21,9 +21,9 @@ public class NewsConverter {
 	
 	public NewsDTO toDTO(NewsEntity entity) {
 		NewsDTO dto = new NewsDTO();
-		if(entity.getId()!=null) {
-			dto.setId(entity.getId());
-		}
+//		if(entity.getId()!=null) {
+//			dto.setId(entity.getId());
+//		}
 		dto.setTitle(entity.getTitle());
 		dto.setContent(entity.getContent());
 		dto.setShortDescription(entity.getShortDescription());
